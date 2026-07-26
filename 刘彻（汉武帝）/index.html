@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>汉武帝——刘彻 | 千古雄主</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:"Noto Serif SC",serif;
+
+    background:
+    linear-gradient(
+    rgba(20,10,0,.85),
+    rgba(20,10,0,.9)
+    ),
+    url("https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b");
+
+    background-size:cover;
+    background-attachment:fixed;
+
+    color:#f5dfaa;
+
+    overflow-x:hidden;
+
+}
+
+
+/* 顶部 */
+
+header{
+
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+header h1{
+
+    font-size:70px;
+
+    color:#ffd86b;
+
+    letter-spacing:15px;
+
+    text-shadow:
+    0 0 20px gold;
+
+    animation:titleShow 3s;
+
+}
+
+
+header p{
+
+    margin-top:30px;
+
+    font-size:24px;
+
+    color:#fff0c0;
+
+}
+
+
+@keyframes titleShow{
+
+from{
+opacity:0;
+transform:translateY(-50px);
+}
+
+to{
+opacity:1;
+}
+
+}
+
+
+
+/* 大标题 */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin:60px 0 30px;
+
+    color:#ffda75;
+
+}
+
+
+
+
+/* 内容容器 */
+
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+/* 卡片 */
+
+.card{
+
+background:
+
+linear-gradient(
+145deg,
+rgba(80,40,10,.8),
+rgba(30,15,5,.9)
+);
+
+
+border:1px solid #c99b3c;
+
+border-radius:20px;
+
+padding:30px;
+
+margin:30px 0;
+
+
+box-shadow:
+
+0 0 20px rgba(255,200,80,.2);
+
+
+transition:.5s;
+
+
+}
+
+
+
+.card:hover{
+
+transform:
+
+translateY(-10px)
+scale(1.03);
+
+
+box-shadow:
+
+0 0 40px gold;
+
+
+}
+
+
+
+/* 人物介绍 */
+
+
+.profile{
+
+display:flex;
+
+gap:40px;
+
+align-items:center;
+
+}
+
+
+.profile img{
+
+width:260px;
+
+height:330px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+border:5px solid gold;
+
+box-shadow:0 0 30px gold;
+
+}
+
+
+
+.info{
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+
+
+/* 时间轴 */
+
+
+.timeline{
+
+position:relative;
+
+}
+
+
+.timeline:before{
+
+content:"";
+
+position:absolute;
+
+left:20px;
+
+top:0;
+
+bottom:0;
+
+width:3px;
+
+background:gold;
+
+}
+
+
+.event{
+
+margin-left:60px;
+
+position:relative;
+
+}
+
+
+.event:before{
+
+content:"";
+
+position:absolute;
+
+left:-52px;
+
+top:25px;
+
+width:18px;
+
+height:18px;
+
+background:#ffd65a;
+
+border-radius:50%;
+
+box-shadow:0 0 15px gold;
+
+}
+
+
+
+.event h3{
+
+color:#ffd86b;
+
+margin-bottom:10px;
+
+}
+
+
+
+.event p{
+
+line-height:1.8;
+
+}
+
+
+
+/* 成语标签 */
+
+
+.tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+}
+
+
+.tag{
+
+padding:15px 25px;
+
+border-radius:30px;
+
+background:#6b4317;
+
+border:1px solid gold;
+
+font-size:20px;
+
+transition:.4s;
+
+}
+
+
+
+.tag:hover{
+
+transform:scale(1.15);
+
+background:#b47722;
+
+box-shadow:0 0 25px gold;
+
+}
+
+
+
+/* 按钮 */
+
+
+.music-btn{
+
+display:block;
+
+margin:40px auto;
+
+padding:18px 40px;
+
+font-size:22px;
+
+font-family:inherit;
+
+color:#3b2200;
+
+background:#ffd45c;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+box-shadow:0 0 20px gold;
+
+transition:.4s;
+
+}
+
+
+
+.music-btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 50px gold;
+
+}
+
+
+
+/* 粒子 */
+
+
+.particle{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+background:gold;
+
+border-radius:50%;
+
+pointer-events:none;
+
+animation:fly 1s forwards;
+
+}
+
+
+
+@keyframes fly{
+
+to{
+
+transform:
+translate(
+var(--x),
+var(--y)
+)
+scale(0);
+
+opacity:0;
+
+}
+
+}
+
+
+
+/* 手机适配 */
+
+@media(max-width:700px){
+
+
+header h1{
+
+font-size:40px;
+
+letter-spacing:5px;
+
+}
+
+
+.profile{
+
+flex-direction:column;
+
+}
+
+
+.profile img{
+
+width:200px;
+
+height:260px;
+
+}
+
+
+.section-title{
+
+font-size:30px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+<h1>汉武帝 · 刘彻</h1>
+
+<p>
+“雄才大略，开拓汉朝盛世”
+</p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<h2 class="section-title">
+人物基本信息卡片
+</h2>
+
+
+<div class="card profile">
+
+
+<img src="pic/1.jpeg"
+alt="汉武帝刘彻">
+
+
+<div class="info">
+
+<p><b>姓名：</b>刘彻</p>
+
+<p><b>庙号：</b>世宗</p>
+
+<p><b>谥号：</b>孝武皇帝</p>
+
+<p><b>身份：</b>西汉第七位皇帝</p>
+
+<p><b>在位：</b>前141年—前87年</p>
+
+<p><b>出生：</b>前156年</p>
+
+<p><b>逝世：</b>前87年</p>
+
+<p>
+<b>评价：</b>
+中国历史上具有雄才大略的帝王之一。
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+<h2 class="section-title">
+生平重大战略轨迹
+</h2>
+
+
+<div class="timeline">
+
+
+
+<div class="card event">
+
+<h3>前141年 —— 登基称帝</h3>
+
+<p>
+刘彻即位，开始加强中央集权，
+为后来的军事扩张和政治改革奠定基础。
+</p>
+
+</div>
+
+
+
+
+<div class="card event">
+
+<h3>前133年 —— 马邑之谋</h3>
+
+<p>
+汉朝正式改变对匈奴的防御政策，
+逐渐转向主动进攻。
+</p>
+
+</div>
+
+
+
+
+<div class="card event">
+
+<h3>前127年 —— 卫青北击匈奴</h3>
+
+<p>
+汉军收复河南地，设置朔方郡，
+扩大汉朝北部疆域。
+</p>
+
+</div>
+
+
+
+
+<div class="card event">
+
+<h3>前121年 —— 霍去病河西之战</h3>
+
+<p>
+夺取河西走廊，加强汉朝与西域联系。
+</p>
+
+</div>
+
+
+
+
+<div class="card event">
+
+<h3>前119年 —— 漠北大战</h3>
+
+<p>
+卫青、霍去病大破匈奴，
+使匈奴势力受到重大削弱。
+</p>
+
+</div>
+
+
+
+
+<div class="card event">
+
+<h3>前138年 —— 张骞出使西域</h3>
+
+<p>
+开辟丝绸之路的重要基础，
+加强东西方交流。
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<h2 class="section-title">
+核心历史贡献与评价
+</h2>
+
+
+
+<div class="card">
+
+
+<h3>① 加强中央集权</h3>
+
+<p>
+实行推恩令，削弱诸侯王势力，
+加强皇帝对国家的控制。
+</p>
+
+
+<br>
+
+
+<h3>② 开拓疆域</h3>
+
+<p>
+多次出兵抗击匈奴，使汉朝疆域扩大，
+提升国家影响力。
+</p>
+
+
+<br>
+
+
+<h3>③ 发展外交交流</h3>
+
+<p>
+派张骞出使西域，为丝绸之路形成创造条件。
+</p>
+
+
+<br>
+
+
+<h3>④ 推行思想统一</h3>
+
+<p>
+采纳董仲舒建议，“罢黜百家，独尊儒术”，
+加强思想上的统一。
+</p>
+
+
+
+</div>
+
+
+
+
+
+<h2 class="section-title">
+历史评价
+</h2>
+
+
+<div class="card">
+
+<p>
+
+汉武帝在位期间，西汉国力达到鼎盛。
+他扩大疆域、强化中央集权，
+使汉朝成为当时世界重要强国。
+
+</p>
+
+<br>
+
+<p>
+
+然而，他晚年连年征战、耗费巨大，
+也造成社会负担增加。
+因此，后世评价他“功业辉煌，但亦有争议”。
+
+</p>
+
+
+</div>
+
+
+
+
+
+<h2 class="section-title">
+相关历史成语标签
+</h2>
+
+
+<div class="card tags">
+
+
+<div class="tag">
+罢黜百家
+</div>
+
+
+<div class="tag">
+独尊儒术
+</div>
+
+
+<div class="tag">
+张骞通西域
+</div>
+
+
+<div class="tag">
+封狼居胥
+</div>
+
+
+<div class="tag">
+马踏匈奴
+</div>
+
+
+<div class="tag">
+雄才大略
+</div>
+
+
+</div>
+
+
+
+
+
+</h2>
+
+
+<button class="music-btn"
+onclick="playMusic()">
+
+听听汉武大帝《最后的倾诉》
+
+</button>
+
+
+
+<audio id="music">
+
+<source src="audio/sound.mp3"
+type="audio/mpeg">
+
+</audio>
+
+
+
+
+</div>
+
+
+
+<script>
+
+
+// 音乐
+
+function playMusic(){
+
+let music=document.getElementById("music");
+
+if(music.paused){
+
+music.play();
+
+}
+
+else{
+
+music.pause();
+
+}
+
+}
+
+
+
+// 点击黄金粒子效果
+
+
+document.addEventListener(
+"click",
+function(e){
+
+
+for(let i=0;i<15;i++){
+
+
+let p=document.createElement("span");
+
+p.className="particle";
+
+
+p.style.left=e.clientX+"px";
+
+p.style.top=e.clientY+"px";
+
+
+p.style.setProperty(
+"--x",
+(Math.random()*200-100)+"px"
+);
+
+
+p.style.setProperty(
+"--y",
+(Math.random()*200-100)+"px"
+);
+
+
+document.body.appendChild(p);
+
+
+
+setTimeout(()=>{
+
+p.remove();
+
+},1000);
+
+
+}
+
+
+}
+
+);
+
+
+</script>
+
+
+
+</body>
+
+</html>
